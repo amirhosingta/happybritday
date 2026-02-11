@@ -1,226 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="viewport-fit=cover,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#a1c4fd" media="(prefers-color-scheme: light)">
-    <meta name="msapplication-navbutton-color" content="#a1c4fd">
-    <meta name="msapplication-TileColor" content="#a1c4fd">
-    
-    <!-- حالت تاریک -->
-    <meta name="theme-color" content="#4a6fa5" media="(prefers-color-scheme: dark)">
-    
-    <!-- iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>تولدت مبارک!</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
-    <link rel="stylesheet" href="styleor.css">
-
-</head>
-<body>
-    <!-- Confetti Container -->
-    <div id="confetti-container"></div>
-
-    <!-- Balloons Container -->
-    <div id="balloons-container"></div>
-
-    <!-- Sparkles Container -->
-    <div id="sparkles-container"></div>
-
-    <!-- Fixed Music Button -->
-    <div class="music-btn-container">
-        <button id="music-btn" class="music-btn" aria-label="پخش موسیقی تولد">
-            <i class="fas fa-play"></i>
-            <div class="audio-waves">
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
-            </div>
-        </button>
-    </div>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Header -->
-        <header class="header fade-in">
-            <h1 class="birthday-title">تولدت مبارک!</h1>
-            <h2 class="birthday-name" id="birthday-person">الهه‌ی قشنگم</h2>
-            <p style="color: #666; font-size: 1.2rem; margin-top: 10px;">امروز روز توست، امروز روز جشن است!</p>
-        </header>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Profile Card -->
-            <div class="card profile-card fade-in">
-                <div class="profile-header">
-                    <div class="profile-image-container">
-                        <div class="profile-image-wrapper">
-                            <img src="photo,s/profle.png" 
-                                 alt="تصویر تولد" 
-                                 class="profile-image"
-                                 onerror="this.src='data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"></svg>
-                        </div>
-                        <div class="profile-image-ring"></div>
-                    </div>
-                    
-                    <div class="profile-info">
-                        <p style="font-size: 1.4rem; color: #4a6fa5; margin: 20px 0 10px;"> 
-                            سن: <span class="gold-text">۱۸ سال</span>
-                        </p>
-                        <p style="font-size: 1.4rem; color: #4a6fa5; margin: 20px 0 10px;">
-                            امروز: <span id="current-date"></span>
-                            <span class="gold-text">۱۳۸۶/۱۲/۲۷</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="profile-stats">
-                    <div style="display: flex; justify-content: space-around; margin-top: 30px;">
-                        <div class="stat-item" style="text-align: center;">
-                            <div style="font-size: 2rem; color: #ff6b8b;">🎯</div>
-                            <div style="font-size: 1.1rem; color: #4a6fa5; margin-top: 5px;">اهدافت</div>
-                        </div>
-                        <div class="stat-item" style="text-align: center;">
-                            <div style="font-size: 2rem; color: #ffd700;">🌟</div>
-                            <div style="font-size: 1.1rem; color: #4a6fa5; margin-top: 5px;">موفقیت‌ها</div>
-                        </div>
-                        <div class="stat-item" style="text-align: center;">
-                            <div style="font-size: 2rem; color: #a1c4fd;">❤️</div>
-                            <div style="font-size: 1.1rem; color: #4a6fa5; margin-top: 5px;">دوست‌دارانت</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Message Card -->
-            <div class="card message-card fade-in">
-                <div class="message-header">
-                    <div class="message-icon">
-                        <i class="fas fa-quote-right"></i>
-                    </div>
-                    <h3 class="message-title">پیام ویژه تولد</h3>
-                </div>
-
-                <div class="message-content">
-                    <p>پرنسس من <span class="highlight" id="person-name">الهه</span>،</p>
-                    
-                    <p>روز تولدت رو بهت تبریک می‌گم! 🎉</p>
-                    
-                    <p>امیدوارم سال جدیدت پر از</p>
-                    
-                    <p class="gold-text" style="text-align: center; font-size: 1.4rem; margin: 15px 0;">
-                        خوشبختی، سلامتی و موفقیت
-                    </p>
-                    
-                    <p>باشه و به همه آرزوهای قشنگت برسی.</p>
-                    
-                    <p>همیشه شاد باشی و لبخند روی لبات باشه <span class="heart">❤️</span></p>
-                    
-                    <p style="text-align: center; margin-top: 20px; font-style: italic; color: #666;">
-                        "زندگی زیباست، امروز زیباترین روز زندگی توست!"
-                    </p>
-                </div>
-            </div>
-
-            <!-- Wishes Card -->
-            <div class="card wishes-card fade-in">
-                <h3 class="wishes-title">آرزوهای خوب برای تو</h3>
-                
-                <ul class="wishes-list">
-                    <li class="wish-item">
-                        <div class="wish-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <span class="wish-text">سلامتی و شادی همیشگی</span>
-                    </li>
-                    <li class="wish-item">
-                        <div class="wish-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="wish-text">موفقیت در تمامی زمینه‌ها</span>
-                    </li>
-                    <li class="wish-item">
-                        <div class="wish-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <span class="wish-text">پیروزی در همه چالش‌ها</span>
-                    </li>
-                    <li class="wish-item">
-                        <div class="wish-icon">
-                            <i class="fas fa-laugh-beam"></i>
-                        </div>
-                        <span class="wish-text">همیشه لبخند روی لبات</span>
-                    </li>
-                    <li class="wish-item">
-                        <div class="wish-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <span class="wish-text">دوست‌های واقعی در کنارت</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Gallery Card -->
-            <div class="card gallery-card fade-in">
-                <h3 class="gallery-title">📸 گالری خاطرات </h3>
-                
-                <div class="gallery-container">
-                    <div class="gallery-item">
-                        <img src="photo,s/خاطره1.png" 
-                             alt="خاطره ۱" 
-                             class="gallery-image"
-                             onerror="this.style.display='none'">
-                        <div class="gallery-overlay">
-                            <p>خاطره زیبا</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item">
-                        <img src="photo,s/خاطره2.jpg" 
-                             alt="خاطره ۲" 
-                             class="gallery-image"
-                             onerror="this.style.display='none'">
-                        <div class="gallery-overlay">
-                            <p>لحظات خاص</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item">
-                        <img src="photo,s/خاطره3.jpg" 
-                             alt="خاطره ۳" 
-                             class="gallery-image"
-                             onerror="this.style.display='none'">
-                        <div class="gallery-overlay">
-                            <p>دورهمی دوستانه</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item">
-                        <img src="photo,s/خاطره4.jpg" 
-                             alt="خاطره ۴" 
-                             class="gallery-image"
-                             onerror="this.style.display='none'">
-                        <div class="gallery-overlay">
-                            <p>لبخندهای شیرین</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer fade-in">
-            <div class="signature">
-                <p>با بهترین آرزوها،</p>
-                <p class="signature-name">دوستان و خانواده</p>
-            </div>
-        </footer>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
